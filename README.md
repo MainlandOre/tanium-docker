@@ -6,11 +6,10 @@ Luckily for us, ubuntu is well supported within docker and that just so happens 
 
 ## Getting Started
 
-1. Build image using the following command:
+1. This will compile an image which includes the TaniumClient and a simple boot script.
 ```
 ./build.sh
 ```
-This will compile an image which includes the TaniumClient and a simple boot script.
 
 2. Start up 5 containers then go checkout your Tanium Console under System Status... you should see your new containers checking in.
 ```
