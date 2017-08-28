@@ -4,6 +4,10 @@ We have a need to simulate the Tanium Client in order to test content we are dev
 
 Luckily for us, ubuntu is well supported within docker and that just so happens to be what our trolleys run to keep track of their status.
 
+## Before Starting
+
+There is only one requirement before you can jump into the "Getting Started" section below.  Copy your `tanium.pub` key into the root directory of this project.  The build script will validate the file exists before continuing.  _(For obvious reasons we do not want to share our pub key.)_
+
 ## Getting Started
 
 1. This will compile an image which includes the TaniumClient and a simple boot script.
