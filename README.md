@@ -16,9 +16,10 @@ This will compile an image which includes the TaniumClient and a simple boot scr
 ```
 ./start.sh -s 192.168.1.2
 ```
-The ip address here is the address of our Tanium Server where the client will start talking into.
-> If you'd like to have more or less containers, add `-c #` where # is the number of containers to spin up.
 Now go checkout your Tanium Console under System Status... you should see your new containers checking in.
+
+> The ip address here is the address of our Tanium Server where the client will start talking into. 
+> If you'd like to have more or less containers, add `-c #` where # is the number of containers to spin up.
 
 3. (Optional) Connect to a bash prompt onto one of your containers:
 ```
