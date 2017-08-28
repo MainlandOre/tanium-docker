@@ -20,8 +20,16 @@ PORT="${SERVER_PORT:-17472}"
 sed -i -e "s/{{SERVER_HOST}}/$SERVER_HOST/g" TaniumClient.ini
 sed -i -e "s/{{SERVER_PORT}}/$PORT/g" TaniumClient.ini
 
-# Write out docker id for this container
-cat /proc/self/cgroup | grep -o -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/" | cut -c1-12 > /id
+# Write the trolley id out to disk; we will simply use the docker id to keep thing simple
+if [ ! -f /id ]; then
+    cat /proc/self/cgroup | grep -o -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/" | cut -c1-12 > /id
+fi
+
+# Initialize the trolley database which we expect to always exist on our trolleys
+if [ ! -f /trolley.db ]; then
+    sqlite3 /trolley.db "CREATE TABLE events (id INTEGER PRIMARY KEY, message varchar(255) not null, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL)"
+    sqlite3 /trolley.db "INSERT INTO events (message) VALUES('database initialized')"
+fi
 
 # off we go
 ./TaniumClient -d
