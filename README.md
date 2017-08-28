@@ -1,4 +1,8 @@
-# Trolley Simulator
+# Tanium Docker
+
+We have a need to simulate the Tanium Client in order to test content we are developing.  The simplest solution, for us, was to spin up the client within Docker containers.  This repository contains that work which includes a few control scripts to make things really easy.
+
+Luckily for us, ubuntu is well supported within docker and that just so happens to be what our trolleys run to keep track of their status.
 
 ## Getting Started
 
