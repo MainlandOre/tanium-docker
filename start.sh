@@ -20,7 +20,7 @@ cd docker
 
 COUNTER=0
 while [ $COUNTER -lt $COUNT ]; do
-    hostname=trolley${COUNTER}.ubuntu
+    hostname=tanium${COUNTER}.ubuntu
     ID=$(docker run -d -e SERVER_HOST=${SERVER} -h ${hostname} docker.io/ubuntu)
     echo "Starting ${hostname} (${ID:0:12})"
     let COUNTER=COUNTER+1

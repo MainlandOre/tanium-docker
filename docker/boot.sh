@@ -20,5 +20,8 @@ PORT="${SERVER_PORT:-17472}"
 sed -i -e "s/{{SERVER_HOST}}/$SERVER_HOST/g" TaniumClient.ini
 sed -i -e "s/{{SERVER_PORT}}/$PORT/g" TaniumClient.ini
 
+# Write out docker id for this container
+cat /proc/self/cgroup | grep -o -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/" | cut -c1-12 > /id
+
 # off we go
 ./TaniumClient -d
