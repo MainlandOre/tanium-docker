@@ -8,7 +8,7 @@
 ```
 This will compile an image which includes the TaniumClient and a simple boot script.
 
-2. Start up 5 containsers:
+2. Start up 5 containers:
 ```
 ./start.sh -s 192.168.1.2
 ```

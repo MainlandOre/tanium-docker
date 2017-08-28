@@ -10,9 +10,9 @@ while getopts “s:c:” OPTION; do
 done
 
 if [ -z $SERVER ]; then
-  echo
-  usage
-  exit 1
+    echo
+    usage
+    exit 1
 fi
 
 echo "Starting ${COUNT} containers with the Tanium server (${SERVER})"
